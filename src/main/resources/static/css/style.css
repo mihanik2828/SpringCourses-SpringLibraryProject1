@@ -1,0 +1,54 @@
+body{
+	margin: 0;
+	
+	font-family: 'Inconsolata', monospace;
+	background-attachment: white;
+	font-size:20px;
+	line-height:1.6;
+	color: #333;
+}
+
+	/* Intro */
+	.intro {
+		background: url("image/hat.gif") center no-repeat;
+		background-size: cover;
+		font-family: 'Roboto', sans-serif;
+		width: 100%;
+		margin: 0 auto;	
+		height: 100px;
+		text-align: center	;
+	}
+
+	.aligncenter
+	{
+		text-align: center;
+	}
+
+	h2
+	{
+		color: #fff;
+		font-family: 'Inconsolata', monospace;
+		font-size : 60px;
+
+		margin: 0;
+	}
+
+	/* Main  one*/
+	.maincontent {
+		font-size: 20px;
+		text-align: left;
+		margin: auto 20%;
+     }
+
+
+ table {
+   border:2px solid black;
+}
+th {
+   border: 1px solid black;
+}
+td {
+   border: 1px solid black;
+}
+	
+	

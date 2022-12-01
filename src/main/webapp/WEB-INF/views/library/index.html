@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:ital@1&display=swap"
+          rel="stylesheet">
+    <title> Библиотека </title>
+</head>
+<body>
+<h2> Библиотека </h2>
+    <div th:each="book : ${books}">
+        <a th:href="@{/library/{id}(id=${book.getId()})}"
+           th:text="${book.getName()+  ',' + ' ' +  book.getAuthor+  ',' + ' ' +  book.getYear}"> user </a>
+    </div>
+    <br/>
+    <hr/>
+
+    <a href="/library/new"> Внести новую книгу </a>
+    <br>
+    <a href="/people"> Перейти в список людей </a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Пользователь </title>
+</head>
+<body>
+<h2> Данные пользователя </h2>
+<p th:text='${"Имя пользователя : " + person.getName()}' id="name">Value</p>
+<p th:text='${"Год рождения : " +person.getYear()}'>Value</p>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}"> Изменить </a>
+<br>
+<br>
+<p th:if="${errorDel}" style="color:red"> Перед удалением пользователя, необходимо, чтобы он сдал все книги </p>
+<div th:if="${!books.isEmpty()}">
+    <p> Книги, взятые данным пользователем : </p>
+    <p th:each="book : ${books}"
+       th:text="${book.getName()}"> user </p>
+</div>
+<div th:if="${books.isEmpty()}">
+    <p> Данный пользователь пока не взял ни одной книги. </p>
+</div>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <br/>
+    <input type="submit" value="Удалить">
+</form>
+</body>
+</html>
